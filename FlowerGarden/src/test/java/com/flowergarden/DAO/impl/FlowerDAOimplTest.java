@@ -2,6 +2,7 @@ package com.flowergarden.DAO.impl;
 
 import com.flowergarden.flowers.*;
 import com.flowergarden.properties.FreshnessInteger;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -52,6 +53,7 @@ public class FlowerDAOimplTest {
 
 
     @Before
+
     public void initFlowerDao() throws SQLException {
         when(dataSource.getConnection()).thenReturn(conn);
 
@@ -59,7 +61,8 @@ public class FlowerDAOimplTest {
         when(conn.createStatement()).thenReturn(prst);
         when(st.executeQuery(any(String.class))).thenReturn(rs);
 
-        flowerDAOimpl = new FlowerDAOimpl(dataSource);
+        //flowerDAOimpl = new FlowerDAOimpl(dataSource);
+        flowerDAOimpl = new FlowerDAOimpl(conn);
 
         flowerRoseWrapped = new FlowerWrapper();
         flowerRoseWrapped.setBouquetId(1);

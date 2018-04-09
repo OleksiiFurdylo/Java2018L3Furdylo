@@ -12,7 +12,7 @@ import java.util.ArrayList;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class FlowerWrapper extends GeneralFlower {
 
-    @XmlElement(name = "flower Id")
+    @XmlElement(name = "flowerId")
     private int id;
     private String name;
     private int lenght;

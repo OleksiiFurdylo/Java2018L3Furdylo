@@ -19,15 +19,9 @@ public class FlowerDAOimpl implements FlowerDAO {
     private Connection conn;
     private ArrayList<Float> resultArrayListWithPricesForBouqet = new ArrayList<>();
 
-    @Autowired
-    public FlowerDAOimpl(DataSource dataSource) {
-        try {
-            this.conn = dataSource.getConnection();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public FlowerDAOimpl(Connection conn) {
+        this.conn = conn;
     }
-
 
 
     @Override

@@ -16,13 +16,17 @@ public class BouquetDAOimpl implements BouqetDAO {
 
     private Connection conn;
 
-    @Autowired
+    /*@Autowired
     public BouquetDAOimpl(DataSource dataSource) {
         try {
             this.conn = dataSource.getConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }*/
+
+    public BouquetDAOimpl(Connection conn) {
+        this.conn = conn;
     }
 
     @Override
